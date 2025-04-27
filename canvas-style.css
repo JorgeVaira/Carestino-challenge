@@ -1,0 +1,50 @@
+body {
+    margin: 0;
+    overflow: hidden; /* Se evitan las barras de desplazamiento */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh; /* Esto asegura que el body ocupe el alto de la ventana en ese momento */
+}
+
+#grid-container {
+    display: grid;
+    width: 100%;
+    height: calc(100vh - 60px); /* Esto es para tener espacio para los controles */
+    box-sizing: border-box; /* Incluye el padding y el border en el width y height */
+}
+
+.cell {
+    box-sizing: border-box;
+    border: 1px solid #eee; /* Para denotar las celdas dibujadas */
+    background-color: white;
+    cursor: pointer; /* Para indicar que la celda tienen interactividad */
+}
+
+.controles {
+    margin-top: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 10px;
+}
+
+.color-selector {
+    position: absolute;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    display: none; /* Tienen que estar oculto por defecto */
+    z-index: 10; /* Aseguramos que se muestre arriba de la cuadricula */
+    padding: 3px;
+    border-radius: 5px;
+}
+
+.color-option {
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border: 1px solid black;
+    cursor: pointer;
+    display: inline-block;
+}
